@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>happy birthday imaan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="os-root">
+
+  <!-- ── LOGIN SCREEN ── -->
+  <div id="login-screen">
+    <div class="login-top">Sunday, 24 May 2026 &nbsp;·&nbsp; welcome back</div>
+
+    <div class="login-card">
+      <div class="login-avatar"><img src="assets/icons/flower_logo.png" alt="flower_logo" /></div>
+      <div class="login-username">imaandavids2405</div>
+
+      <div class="login-pw-row">
+        <input id="pw-input" type="password" placeholder="password" autocomplete="off" />
+        <button id="login-btn" onclick="tryLogin()">➜</button>
+      </div>
+
+      <div id="login-error"></div>
+      <div class="login-hint">hint: its pretty damn easy come now man.</div>
+    </div>
+
+    <div class="login-bottom">
+      <button class="login-bottom-btn">
+        <div class="login-bottom-icon"><img src="assets/icons/sleep.png" alt="sleep" /></div>sleep
+      </button>
+      <button class="login-bottom-btn" onclick="location.reload()">
+        <div class="login-bottom-icon"><img src="assets/icons/restart.png" alt="restart" /></div>restart
+      </button>
+      <button class="login-bottom-btn" onclick="window.close()">
+        <div class="login-bottom-icon"><img src="assets/icons/poweroff.png" alt="power_off" /></div>shut down
+      </button>
+    </div>
+  </div>
+
+  <!-- ── BOOT SCREEN ── -->
+  <div id="boot-screen">
+    <div class = "boot-logo" style="font-size:36px"><img src="assets/icons/flower_logo.png" alt="flower_logo" /></div>
+    <div class="boot-title">welcome back imaan</div>
+    <div class="boot-sub">loading...</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- ── WALLPAPER DECORATIONS ── -->
+  <span class="wallpaper-deco" style="top:8%;left:5%">🌸</span>
+  <span class="wallpaper-deco" style="top:12%;left:88%">🌈</span>
+  <span class="wallpaper-deco" style="top:55%;left:3%">🌻</span>
+  <span class="wallpaper-deco" style="top:65%;left:90%">🐱</span>
+  <span class="wallpaper-deco" style="top:30%;left:50%">⭐</span>
+  <span class="wallpaper-deco" style="top:80%;left:45%">🌿</span>
+  <span class="wallpaper-deco" style="top:20%;left:70%">🍀</span>
+  <span class="wallpaper-deco" style="top:45%;left:80%">🌷</span>
+
+  <!-- ── DESKTOP ICONS ── -->
+  <div class="desktop-icon" style="top:20px;left:14px" ondblclick="openWin('letter-win','letter-chip')">
+    <div class="icon-img-letter"><img src="assets/icons/letter.png" alt="letter" /></div>
+    <div class="icon-label">dear imaan.txt</div>
+  </div>
+  <div class="desktop-icon" style="top:130px;left:14px" ondblclick="openWin('photos-win','photos-chip')">
+    <div class="icon-img-cam"><img src="assets/icons/cam.png" alt="cam" /></div>
+    <div class="icon-label">photos</div>
+  </div>
+  <div class="desktop-icon" style="top:240px;left:14px" ondblclick="openWin('reasons-win','reasons-chip')">
+    <div class="icon-img-slot"><img src="assets/icons/slot.png" alt="slot" /></div>
+    <div class="icon-label">reasons.exe</div>
+  </div>
+  <div class="desktop-icon" style="top:350px;left:14px" ondblclick="openWin('playlist-win','playlist-chip')">
+    <div class="icon-img-cd"><img src="assets/icons/cd.png" alt="cd" /></div>
+    <div class="icon-label">playlist.mp3</div>
+  </div>
+  <div class="desktop-icon" style="top:460px;left:14px" ondblclick="openCatRun()">
+    <div class="icon-img-cd" style="font-size:40px">🐱</div>
+    <div class="icon-label">caleb.exe</div>
+  </div>
+  <div class="desktop-icon" style="top:570px;left:14px" ondblclick="openWin('tama-win','tama-chip')">
+    <div class="icon-img-cd" style="font-size:40px">🐈</div>
+    <div class="icon-label">rooibos.pet</div>
+  </div>
+
+  <!-- ── LETTER WINDOW ── -->
+  <div class="window" id="letter-win">
+    <div class="title-bar" id="letter-bar">
+      <div class="title-bar-left"><span></span> dear imaan.txt — notepad</div>
+      <div class="win-btns">
+        <button class="win-btn min" onclick="closeWin('letter-win','letter-chip')">–</button>
+        <button class="win-btn max">□</button>
+        <button class="win-btn close" onclick="closeWin('letter-win','letter-chip')">✕</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div id="letter-body"></div>
+    </div>
+  </div>
+
+  <!-- ── PHOTOS WINDOW ── -->
+  <div class="window" id="photos-win">
+    <div class="title-bar" id="photos-bar">
+      <div class="title-bar-left"><span>📸</span> photos — viewer</div>
+      <div class="win-btns">
+        <button class="win-btn min" onclick="closeWin('photos-win','photos-chip')">–</button>
+        <button class="win-btn max">□</button>
+        <button class="win-btn close" onclick="closeWin('photos-win','photos-chip')">✕</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="polaroid-grid" id="polaroid-grid"></div>
+    </div>
+  </div>
+
+  <!-- ── REASONS WINDOW ── -->
+  <div class="window" id="reasons-win">
+    <div class="title-bar" id="reasons-bar">
+      <div class="title-bar-left"><span>💖</span> reasons.exe</div>
+      <div class="win-btns">
+        <button class="win-btn min" onclick="closeWin('reasons-win','reasons-chip')">–</button>
+        <button class="win-btn max">□</button>
+        <button class="win-btn close" onclick="closeWin('reasons-win','reasons-chip')">✕</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p style="font-size:11px;color:#e91e8c;margin-bottom:10px;text-align:center;font-weight:700">
+        press spin to see why i love you / phrases of friendship
+      </p>
+      <div id="reason-display">click spin!</div>
+      <button id="spin-btn" onclick="spinReason()">spin 🎰</button>
+    </div>
+  </div>
+
+  <!-- ── PLAYLIST WINDOW ── -->
+  <div class="window" id="playlist-win">
+    <div class="title-bar" id="playlist-bar">
+      <div class="title-bar-left"><span>🎵</span> imaanamp 2000</div>
+      <div class="win-btns">
+        <button class="win-btn min" onclick="closeWin('playlist-win','playlist-chip')">–</button>
+        <button class="win-btn max">□</button>
+        <button class="win-btn close" onclick="closeWin('playlist-win','playlist-chip')">✕</button>
+      </div>
+    </div>
+    <div class="window-body" style="padding:0">
+      <div class="winamp-header">🌸 imaanamp v2.0 🌸</div>
+      <div class="visualiser" id="visualiser"></div>
+      <ul class="track-list" id="track-list"></ul>
+    </div>
+  </div>
+
+  <!-- ── CAT RUNNER WINDOW ── -->
+  <div class="window" id="catrun-win">
+    <div class="title-bar" id="catrun-bar">
+      <div class="title-bar-left"><span>🐱</span> calico run — v1.0</div>
+      <div class="win-btns">
+        <button class="win-btn min" onclick="closeCatRun()">–</button>
+        <button class="win-btn max">□</button>
+        <button class="win-btn close" onclick="closeCatRun()">✕</button>
+      </div>
+    </div>
+    <div class="window-body" style="padding:0;overflow:hidden">
+      <canvas id="catrun-canvas" width="480" height="220"></canvas>
+    </div>
+  </div>
+
+  <!-- ── TAMAGOTCHI WINDOW ── -->
+  <div class="window" id="tama-win">
+    <div class="title-bar" id="tama-bar">
+      <div class="title-bar-left"><span>🐈</span> rooibos.pet</div>
+      <div class="win-btns">
+        <button class="win-btn min" onclick="closeWin('tama-win','tama-chip')">–</button>
+        <button class="win-btn max">□</button>
+        <button class="win-btn close" onclick="closeWin('tama-win','tama-chip')">✕</button>
+      </div>
+    </div>
+    <div class="window-body" id="tama-body"></div>
+  </div>
+
+  <!-- ── TASKBAR ── -->
+  <div id="taskbar">
+    <button id="start-btn">🌸 start</button>
+    <div class="taskbar-apps" id="taskbar-apps"></div>
+    <div id="clock">12:00</div>
+  </div>
+
+</div>
+<script src="tamagotchi.js"></script>
+<script src="catrun.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
