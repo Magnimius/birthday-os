@@ -16,7 +16,7 @@
   var FRAME_W       = 159;   // px per frame in strip
   var FRAME_H       = 164;
   var CAT_RENDER_W  = 55;    // rendered size in canvas
-  var CAT_RENDER_H  = 60;
+  var CAT_RENDER_H  = 57;
   var FRAME_RATE    = 6;     // update sprite every N game frames
 
   /* ── CANVAS SETUP ────────────────────────── */
@@ -43,7 +43,7 @@
     this.width        = CAT_RENDER_W;
     this.height       = CAT_RENDER_H;
     this.x            = x;
-    this.y            = GROUND_Y - this.height;
+    this.y            = GROUND_Y - this.height + 18;
     this.vy           = 0;
     this.jumpVelocity = -18;
     this.frame        = 0;
@@ -61,8 +61,8 @@
     this.y  += this.vy;
     this.vy += gravity;
 
-    if (this.y >= GROUND_Y - this.height) {
-      this.y        = GROUND_Y - this.height;
+    if (this.y >= GROUND_Y - this.height + 18) {
+      this.y        = GROUND_Y - this.height + 18;
       this.vy       = 0;
       this.onGround = true;
     }

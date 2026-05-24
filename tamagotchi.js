@@ -63,11 +63,11 @@
 
     // mood message
     var messages = {
-      idle   : ['just vibing 😌', 'purring softly...', '*slow blink*', 'content cat 🧡'],
-      happy  : ['!!! 🎉', 'SO HAPPY rn', '*zooomies*', 'best day ever!!'],
-      hungry : ['...feed me 👀', 'stomach = empty', 'meow. MEOW.', 'food pls 🍚'],
-      sleepy : ['zzz... 😴', 'need nap NOW', '*yawns widely*', 'so tired omg'],
-      dead   : ['💀 rooibos has left the chat', 'you forgot to feed me smh']
+      idle   : ['streaming omani music', '*purring*', '*slow blink*', 'my mood is so regulated rn'],
+      happy  : ['happy happy haaappy', 'meow!', 'i could run a marathon', ':3'],
+      hungry : ['mama i\'m hungry', 'girl if you don\'t feed me', 'meow. MEOW.', 'a piece of sushi would be soooo good rn haha'],
+      sleepy : ['holy nap time', 'if you don\'t let me sleep NOW', '*yawning*', 'omg im so bored lets all go to sleep'],
+      dead   : ['you just pissed me off and ruined my day', '*arab hissing*']
     };
     var pool = messages[pet.mood] || messages.idle;
     var msg  = pool[Math.floor(Date.now() / 4000) % pool.length];

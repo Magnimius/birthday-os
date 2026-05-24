@@ -25,7 +25,7 @@
 #os-root {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #ffe0ec 0%, #fff6c2 40%, #d4f5c2 70%, #c2e8ff 100%);
+  background: url('assets/photos/bg.jpg') center center / cover no-repeat;
   position: relative;
   overflow: hidden;
   font-family: pixelNormal;
@@ -292,6 +292,12 @@
   text-shadow: 0 1px 3px rgba(255,255,255,0.8);
 }
 
+.title-bar-left img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
 /* ───────────────────────────────────────────
    WINDOWS
 ─────────────────────────────────────────── */
@@ -428,7 +434,7 @@
 }
 .polaroid-img {
   width: 124px;
-  height: 100px;
+  height: 130px;
   background: linear-gradient(135deg, #ffd6ec, #fff3c2);
   display: flex;
   align-items: center;
